@@ -67,10 +67,10 @@ export default function Main() {
       <div className="flex flex-col gap-3 lg:flex-row lg:justify-between lg:items-center">
         <div>
           <h1 className="font-bold text-2xl">Account lists</h1>
-          <p>Here's a list of your accounhts</p>
+          <p>Here's a list of your accounts</p>
         </div>
         {/* Filter UI */}
-        <div className="flex gap-2">
+        {/* <div className="flex gap-2">
           <p>Sort by : </p>
           <div>
             <select
@@ -95,7 +95,10 @@ export default function Main() {
               <option value="desc">Descending</option>
             </select>
           </div>
-        </div>
+        </div> */}
+        <p className="text-xs">
+          Sorted by {order} order ({type}){" "}
+        </p>
         {/* Excel download button and search bar */}
         <div className="flex gap-4 items-center">
           <FontAwesomeIcon
@@ -119,6 +122,9 @@ export default function Main() {
         totalResult={totalResult}
         page={page}
         setPage={setPage}
+        setData={setData}
+        setType={setType}
+        setOrder={setOrder}
       ></Table>
     </div>
   );
